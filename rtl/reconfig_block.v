@@ -84,7 +84,7 @@ localparam      IDLE        = 3'd0  ,
                 LAT_1       = 3'd4  ,
                 PRESET      = 3'd5  ;
 
-always@(posedge scan_clk,posedge scan_rst_n)
+always@(posedge scan_clk,negedge scan_rst_n)
     if(~scan_rst_n) cstate      <= IDLE;
     else            cstate      <= nstate;
 
